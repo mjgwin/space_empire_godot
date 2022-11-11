@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/MainGUI.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/ui/space_ui_sprite_sheet.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/textures/resources/food.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/textures/resources/currency.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/resources/person_icon.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 832.669, 751.844, 91.285, 28.2769 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
 
 [node name="MainGUI" type="Control"]
 anchor_right = 1.0
@@ -10,12 +24,74 @@ script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-margin_right = 1920.0
-margin_bottom = 150.0
-color = Color( 0, 0.219608, 0.329412, 1 )
+[node name="ResourceBackground" type="TextureRect" parent="CanvasLayer"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 1916.0
+margin_bottom = 74.0
+texture = SubResource( 1 )
+stretch_mode = 1
+
+[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground"]
+margin_left = 102.0
+margin_top = 13.0
+margin_right = 166.0
+margin_bottom = 80.0
+texture = ExtResource( 3 )
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer/ResourceBackground"]
+margin_left = 170.0
+margin_top = 27.0
+margin_right = 182.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+align = 1
+valign = 1
+
+[node name="CurrencyIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground"]
+margin_left = 232.0
+margin_top = 14.0
+margin_right = 264.0
+margin_bottom = 46.0
+grow_horizontal = 0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="CurrencyLabel" type="Label" parent="CanvasLayer/ResourceBackground"]
+margin_left = 302.0
+margin_top = 27.0
+margin_right = 314.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+align = 1
+valign = 1
+
+[node name="PopIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground"]
+margin_left = 359.0
+margin_top = 15.0
+margin_right = 423.0
+margin_bottom = 79.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 6 )
+
+[node name="PopLabel" type="Label" parent="CanvasLayer/ResourceBackground"]
+margin_left = 427.0
+margin_top = 26.0
+margin_right = 439.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+align = 1
+valign = 1
 
 [node name="FPSCounter" type="Label" parent="CanvasLayer"]
-margin_right = 54.0
-margin_bottom = 14.0
+margin_left = 12.0
+margin_top = 11.0
+margin_right = 66.0
+margin_bottom = 25.0
 text = "FPS: 100"
