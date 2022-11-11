@@ -19,7 +19,7 @@ font_data = ExtResource( 4 )
 [node name="MainGUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -930.0
+margin_bottom = -908.0
 script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -32,57 +32,74 @@ margin_bottom = 74.0
 texture = SubResource( 1 )
 stretch_mode = 1
 
-[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground"]
-margin_left = 102.0
-margin_top = 13.0
-margin_right = 166.0
-margin_bottom = 80.0
+[node name="FoodContainer" type="HBoxContainer" parent="CanvasLayer/ResourceBackground"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 213.0
+margin_bottom = 112.0
+custom_constants/separation = 10
+
+[node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground/FoodContainer"]
+margin_right = 64.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 64, 64 )
 texture = ExtResource( 3 )
 
-[node name="FoodLabel" type="Label" parent="CanvasLayer/ResourceBackground"]
-margin_left = 170.0
-margin_top = 27.0
-margin_right = 182.0
-margin_bottom = 94.0
+[node name="FoodLabel" type="Label" parent="CanvasLayer/ResourceBackground/FoodContainer"]
+margin_left = 74.0
+margin_top = 20.0
+margin_right = 86.0
+margin_bottom = 87.0
 custom_fonts/font = SubResource( 2 )
 text = "0
 "
 align = 1
 valign = 1
 
-[node name="CurrencyIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground"]
-margin_left = 232.0
-margin_top = 14.0
-margin_right = 264.0
-margin_bottom = 46.0
+[node name="CurrencyContainer" type="HBoxContainer" parent="CanvasLayer/ResourceBackground"]
+margin_left = 306.0
+margin_top = 1.0
+margin_right = 427.0
+margin_bottom = 118.0
+custom_constants/separation = 10
+
+[node name="CurrencyIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground/CurrencyContainer"]
+margin_right = 64.0
+margin_bottom = 117.0
 grow_horizontal = 0
-rect_scale = Vector2( 1.5, 1.5 )
+rect_min_size = Vector2( 64, 64 )
 texture = ExtResource( 5 )
+stretch_mode = 5
 
-[node name="CurrencyLabel" type="Label" parent="CanvasLayer/ResourceBackground"]
-margin_left = 302.0
-margin_top = 27.0
-margin_right = 314.0
-margin_bottom = 94.0
+[node name="CurrencyLabel" type="Label" parent="CanvasLayer/ResourceBackground/CurrencyContainer"]
+margin_left = 74.0
+margin_top = 25.0
+margin_right = 86.0
+margin_bottom = 92.0
 custom_fonts/font = SubResource( 2 )
 text = "0
 "
 align = 1
 valign = 1
 
-[node name="PopIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground"]
-margin_left = 359.0
-margin_top = 15.0
-margin_right = 423.0
-margin_bottom = 79.0
-rect_scale = Vector2( 0.7, 0.7 )
+[node name="PopContainer" type="HBoxContainer" parent="CanvasLayer/ResourceBackground"]
+margin_left = 491.0
+margin_top = 5.0
+margin_right = 609.0
+margin_bottom = 111.0
+custom_constants/separation = 10
+
+[node name="PopIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground/PopContainer"]
+margin_right = 64.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 32, 32 )
 texture = ExtResource( 6 )
 
-[node name="PopLabel" type="Label" parent="CanvasLayer/ResourceBackground"]
-margin_left = 427.0
-margin_top = 26.0
-margin_right = 439.0
-margin_bottom = 93.0
+[node name="PopLabel" type="Label" parent="CanvasLayer/ResourceBackground/PopContainer"]
+margin_left = 74.0
+margin_top = 19.0
+margin_right = 86.0
+margin_bottom = 86.0
 custom_fonts/font = SubResource( 2 )
 text = "0
 "
