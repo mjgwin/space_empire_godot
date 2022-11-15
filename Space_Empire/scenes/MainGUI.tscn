@@ -34,9 +34,9 @@ stretch_mode = 1
 
 [node name="FoodContainer" type="HBoxContainer" parent="CanvasLayer/ResourceBackground"]
 margin_left = 120.0
-margin_top = 5.0
+margin_top = 6.0
 margin_right = 213.0
-margin_bottom = 112.0
+margin_bottom = 113.0
 custom_constants/separation = 10
 
 [node name="FoodIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground/FoodContainer"]
@@ -58,9 +58,9 @@ valign = 1
 
 [node name="CurrencyContainer" type="HBoxContainer" parent="CanvasLayer/ResourceBackground"]
 margin_left = 306.0
-margin_top = 1.0
+margin_top = 4.0
 margin_right = 427.0
-margin_bottom = 118.0
+margin_bottom = 121.0
 custom_constants/separation = 10
 
 [node name="CurrencyIcon" type="TextureRect" parent="CanvasLayer/ResourceBackground/CurrencyContainer"]
